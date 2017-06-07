@@ -1,1 +1,1 @@
-script: bundle exec make lint
+script: make lint
