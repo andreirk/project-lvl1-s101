@@ -1,9 +1,9 @@
-var readlineSync = require('readline-sync');
+const readlineSync = require('readline-sync');
 
 export default () => {
-    console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
 
-    var userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
 
-    console.log(`\nHello, ${userName}!`);
-}
+  console.log(`\nHello, ${userName}!`);
+};
