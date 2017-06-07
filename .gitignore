@@ -3,3 +3,5 @@ results
 build
 dist
 node_modules
+
+*.log
