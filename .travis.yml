@@ -1,2 +1,4 @@
 
-script: make lint
+script: 
+  - npm install eslint
+  - make lint
