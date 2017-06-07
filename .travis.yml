@@ -1,2 +1,2 @@
-script: make install
+install: make install
 script: make lint
