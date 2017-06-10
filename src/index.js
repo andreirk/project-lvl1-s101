@@ -4,14 +4,8 @@ const NUMBER_OF_QUESTIONS = 3;
 const MIN = 1;
 const MAX = 20;
 
-const getListOfQuestions = (numOfQuestions, minValue, maxValue) => {
-  const questionsMap = [];
-  for (let i = 0; i < numOfQuestions; i += 1) {
-    const value = Math.floor(Math.random() * (maxValue - minValue)) + minValue;
-    questionsMap.push(value);
-  }
-  return questionsMap;
-};
+const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const isEven = num => num % 2 === 0;
 
 const brainGames = () => {
   console.log(`
@@ -20,13 +14,10 @@ const brainGames = () => {
   `);
 
   const userName = readlineSync.question('May I have your name? ');
-
-  const questionList = getListOfQuestions(NUMBER_OF_QUESTIONS, MIN, MAX);
-
-  for (let i = 0; i < questionList.length; i += 1) {
-    const question = questionList[i];
+  for (let i = 0; i < NUMBER_OF_QUESTIONS; i += 1) {
+    const question = getRandomInteger(MIN, MAX);
     console.log('Question: ', question);
-    const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+    const correctAnswer = isEven(question) ? 'yes' : 'no';
 
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
@@ -40,4 +31,3 @@ const brainGames = () => {
 };
 
 export default brainGames;
-
