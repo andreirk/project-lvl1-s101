@@ -4,23 +4,43 @@ const NUMBER_OF_QUESTIONS = 3;
 const MIN = 1;
 const MAX = 20;
 
+const operationList = [
+  {
+    name: 'add',
+    sign: '+',
+    func: (a, b) => a + b,
+  },
+  {
+    name: 'sub',
+    sign: '-',
+    func: (a, b) => a - b,
+  },
+  {
+    name: 'mul',
+    sign: '*',
+    func: (a, b) => a * b,
+  },
+];
+
 const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const isEven = num => num % 2 === 0;
 
 const brainGames = () => {
   console.log(`
   Welcome to the Brain Games!
-  Answer "yes" if number even otherwise answer "no".
+  What is the result of the expression?
   `);
 
   const userName = readlineSync.question('May I have your name? ');
   for (let i = 0; i < NUMBER_OF_QUESTIONS; i += 1) {
-    const question = getRandomInteger(MIN, MAX);
-    console.log('Question: ', question);
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
-
+    const num1 = getRandomInteger(MIN, MAX);
+    const num2 = getRandomInteger(MIN, MAX);
+    const numOfOperations = operationList.length;
+    const operation = operationList[getRandomInteger(0, numOfOperations)];
+    const question = `Question: ${num1} ${operation.sign} ${num2}`;
+    console.log(question);
+    const correctAnswer = operation.func(num1, num2);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === correctAnswer) {
+    if (answer === String(correctAnswer)) {
       console.log('Correct!');
     } else {
       console.log(`Let's try again, ${userName}`);
