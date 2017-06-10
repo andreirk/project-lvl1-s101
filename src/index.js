@@ -21,9 +21,10 @@ const brainGames = () => {
 
   const userName = readlineSync.question('May I have your name? ');
 
-  const questionsMap = getListOfQuestions(NUMBER_OF_QUESTIONS, MIN, MAX);
+  const questionList = getListOfQuestions(NUMBER_OF_QUESTIONS, MIN, MAX);
 
-  for (const question of questionsMap) {
+  for (let i = 0; i < questionList.length; i += 1) {
+    const question = questionList[i];
     console.log('Question: ', question);
     const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
 
@@ -37,7 +38,6 @@ const brainGames = () => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-
 
 export default brainGames;
 
