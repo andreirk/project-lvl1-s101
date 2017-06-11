@@ -24,7 +24,7 @@ const getBallancedNum = (num) => {
   return arrOfDigits.join('');
 };
 
-const gameLogic = () => {
+const gameQuestion = () => {
   const notBalancedNum = getRandomInteger(MIN, MAX);
 
   const correctAnswer = getBallancedNum(notBalancedNum);
@@ -36,6 +36,6 @@ const gameLogic = () => {
   return questionData;
 };
 
-const brainBalance = () => gameBegin(mainQuestion, gameLogic);
+const brainBalance = () => gameBegin(mainQuestion, gameQuestion);
 
 export default brainBalance;

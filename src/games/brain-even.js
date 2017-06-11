@@ -5,7 +5,7 @@ import getRandomInteger from '../randomInt';
 const MIN = 1;
 const MAX = 20;
 
-const mainQuestion = 'Answer "yes" if number even otherwise answer "no".';
+const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = num => num % 2 === 0;
 
@@ -21,6 +21,6 @@ const gameLogic = () => {
   return questionData;
 };
 
-const brainEven = () => gameBegin(mainQuestion, gameLogic);
+const brainEven = () => gameBegin(gameDescription, gameLogic);
 
 export default brainEven;

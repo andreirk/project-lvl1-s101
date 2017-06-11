@@ -4,7 +4,7 @@ import getRandomInteger from '../randomInt';
 const MIN = 1;
 const MAX = 20;
 
-const mainQuestion = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
 const operationList = [
   {
@@ -25,7 +25,7 @@ const operationList = [
 ];
 
 
-const gameLogic = () => {
+const gameQuestion = () => {
   const num1 = getRandomInteger(MIN, MAX);
   const num2 = getRandomInteger(MIN, MAX);
   const numOfOperations = operationList.length;
@@ -40,6 +40,6 @@ const gameLogic = () => {
   return questionData;
 };
 
-const brainCalc = () => gameBegin(mainQuestion, gameLogic);
+const brainCalc = () => gameBegin(gameDescription, gameQuestion);
 
 export default brainCalc;
