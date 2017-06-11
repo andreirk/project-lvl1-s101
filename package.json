@@ -11,7 +11,7 @@
     "eslint": "eslint src"
   },
   "bin": {
-    "brain-calc": "dist/bin/brain-games.js"
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "author": "",
   "license": "ISC",
