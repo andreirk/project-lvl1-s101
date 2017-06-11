@@ -1,6 +1,6 @@
 {
   "name": "brain_games_of_andreirk",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "hexlet project",
   "main": "index.js",
   "scripts": {

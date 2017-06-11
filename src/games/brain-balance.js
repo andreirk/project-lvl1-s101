@@ -6,28 +6,24 @@ const MAX = 1000;
 
 const mainQuestion = 'Balance the given number.';
 
-const getMax = arr => Math.max.apply(null, arr);
-const getMin = arr => Math.max.apply(null, arr);
-
-const getBallancedNum = (num) => {
-  const arrOfDigits = Array.from(String(num));
-  let maxDigit = getMax(arrOfDigits);
-  let minDigit = getMin(arrOfDigits);
-
-  while ((maxDigit - minDigit) > 1) {
+const getBallancedNum = (arr) => {
+  const arrOfDigits = arr;
+  arrOfDigits.sort();
+  const lastIndex = arrOfDigits.length - 1;
+  const minDigit = arrOfDigits[0];
+  const maxDigit = arrOfDigits[lastIndex];
+  if (maxDigit - minDigit > 1) {
     arrOfDigits[0] += 1;
-    const lastIndex = arrOfDigits.length - 1;
     arrOfDigits[lastIndex] -= 1;
-    maxDigit = getMax(arrOfDigits);
-    minDigit = getMin(arrOfDigits);
+    getBallancedNum(arrOfDigits);
   }
   return arrOfDigits.join('');
 };
 
 const gameQuestion = () => {
   const notBalancedNum = getRandomInteger(MIN, MAX);
-
-  const correctAnswer = getBallancedNum(notBalancedNum);
+  const arrOfDigits = String(notBalancedNum).split('').map(el => Number(el));
+  const correctAnswer = getBallancedNum(arrOfDigits);
   const questionData = {
     questionText: ` ${notBalancedNum}`,
     correctAnswer: String(correctAnswer),
