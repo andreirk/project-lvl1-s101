@@ -1,6 +1,6 @@
 {
   "name": "brain_games_of_andreirk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "hexlet project",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,10 @@
     "eslint": "eslint src"
   },
   "bin": {
-    "brain-calc": "dist/bin/brain-calc.js"
-  },
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js"
+    },
   "author": "",
   "license": "ISC",
   "devDependencies": {

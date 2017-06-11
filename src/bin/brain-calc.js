@@ -1,12 +1,6 @@
-// import gameBegin from '..';
-// import calcGame from '../games/brain-calc';
+#!/usr/bin/env node
 
-import { CalcQuestion, CalcGame } from '../games/brain-calc';
+import brainCalc from '../games/brain-calc';
 
-const question = new CalcQuestion();
+brainCalc();
 
-console.log(question);
-
-// const game = new CalcGame();
-
-// game.run();
